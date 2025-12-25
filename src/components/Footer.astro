@@ -1,0 +1,122 @@
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>About PlayGames</h4>
+            <p>Your premier destination for trading card games, board games, and community events in Spartanburg, SC. We're dedicated to fostering a welcoming and competitive gaming environment.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="#home">Home</a>
+            <a href="#events">Events Calendar</a>
+            <a href="#shop">Card Shop</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p>📍 Spartanburg, SC</p>
+            <p>📧 info@playgames.com</p>
+            <p>📞 (864) 555-GAME</p>
+            <p>🕐 Mon-Sat: 11AM-10PM<br>Sun: 12PM-8PM</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">Discord</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 PlayGames. All rights reserved. | Spartanburg, SC</p>
+    </div>
+</footer>
+
+<style>
+    /* Footer */
+    footer {
+        background: rgba(15, 12, 41, 0.95);
+        padding: 2rem 1rem 1rem;
+        margin-top: auto;
+        border-top: 2px solid #6c63ff;
+    }
+
+    .footer-content {
+        max-width: 1400px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 0 auto 2rem;
+    }
+
+    .footer-section h4 {
+        color: #667eea;
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+        color: #b0b0b0;
+        line-height: 1.8;
+        text-decoration: none;
+        display: block;
+        transition: color 0.3s ease;
+        font-size: 0.95rem;
+    }
+
+    .footer-section a:hover {
+        color: #6c63ff;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(108, 99, 255, 0.2);
+        color: #888;
+        font-size: 0.9rem;
+    }
+
+    /* Tablet */
+    @media (min-width: 768px) {
+        footer {
+            padding: 2.5rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-section h4 {
+            font-size: 1.15rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 1rem;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+        }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+        footer {
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+    }
+</style>

@@ -1,16 +1,261 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="PlayGames - Spartanburg's Premier Card & Game Shop">
+	
+	<!-- Hero Section -->
+	<section class="hero">
+		<h1>Welcome to PlayGames</h1>
+		<p>Spartanburg's Premier Destination for Trading Cards & Gaming</p>
+		<p class="location">📍 Located in Spartanburg, SC</p>
+		<a href="#shop" class="cta-button">Explore Our Collection</a>
+	</section>
+
+	<!-- Features Grid -->
+	<section class="features">
+		<div class="feature-card">
+			<div class="feature-icon">🎴</div>
+			<h3>Premium Cards</h3>
+			<p>Discover an extensive collection of Magic: The Gathering, Pokémon, Yu-Gi-Oh!, and more. From common cards to rare collectibles, we have something for every player and collector.</p>
+		</div>
+
+		<div class="feature-card">
+			<div class="feature-icon">🎮</div>
+			<h3>Weekly Events</h3>
+			<p>Join our community for tournaments, draft nights, and casual play sessions. From Friday Night Magic to weekend championships, there's always something exciting happening.</p>
+		</div>
+
+		<div class="feature-card">
+			<div class="feature-icon">🏆</div>
+			<h3>Competitive Play</h3>
+			<p>Test your skills in our organized tournaments with prizes and rankings. Whether you're a seasoned pro or just starting out, we welcome players of all skill levels.</p>
+		</div>
+
+		<div class="feature-card">
+			<div class="feature-icon">🎲</div>
+			<h3>Board Games</h3>
+			<p>Explore our selection of board games and tabletop RPGs. From classic strategy games to the latest releases, perfect for game nights with friends and family.</p>
+		</div>
+
+		<div class="feature-card">
+			<div class="feature-icon">👥</div>
+			<h3>Community Hub</h3>
+			<p>Connect with fellow gamers in our welcoming space. Make new friends, join leagues, and become part of Spartanburg's growing gaming community.</p>
+		</div>
+
+		<div class="feature-card">
+			<div class="feature-icon">✨</div>
+			<h3>Expert Staff</h3>
+			<p>Our knowledgeable team is here to help you build the perfect deck, find that elusive card, or recommend your next favorite game. We're passionate gamers who love to share our expertise.</p>
+		</div>
+	</section>
+
+</Layout>
+
+<style>
+
+	/* Main Content */
+	main {
+		flex: 1;
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 1.5rem 1rem;
+		width: 100%;
+	}
+
+	/* Tablet and up */
+	@media (min-width: 768px) {
+		main {
+			padding: 3rem 2rem;
+		}
+	}
+
+	/* Hero Section */
+	.hero {
+		text-align: center;
+		padding: 2rem 1rem;
+		background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+		border-radius: 15px;
+		margin-bottom: 2rem;
+		border: 1px solid rgba(108, 99, 255, 0.2);
+	}
+
+	.hero h1 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		line-height: 1.2;
+	}
+
+	.hero p {
+		font-size: 1rem;
+		color: #b0b0b0;
+		margin-bottom: 1rem;
+		line-height: 1.5;
+	}
+
+	.hero .location {
+		font-size: 1rem;
+		color: #6c63ff;
+		font-weight: 600;
+	}
+
+	.cta-button {
+		display: inline-block;
+		padding: 0.875rem 2rem;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		text-decoration: none;
+		border-radius: 50px;
+		font-weight: 600;
+		font-size: 1rem;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+		margin-top: 1rem;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 25px rgba(108, 99, 255, 0.6);
+	}
+
+	/* Tablet and up */
+	@media (min-width: 768px) {
+		.hero {
+			padding: 3rem 2rem;
+			border-radius: 20px;
+			margin-bottom: 3rem;
+		}
+
+		.hero h1 {
+			font-size: 3rem;
+		}
+
+		.hero p {
+			font-size: 1.2rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.hero .location {
+			font-size: 1.1rem;
+		}
+
+		.cta-button {
+			padding: 1rem 2.5rem;
+			font-size: 1.1rem;
+		}
+	}
+
+	/* Desktop */
+	@media (min-width: 1024px) {
+		.hero {
+			padding: 4rem 2rem;
+			margin-bottom: 4rem;
+		}
+
+		.hero h1 {
+			font-size: 3.5rem;
+		}
+
+		.hero p {
+			font-size: 1.3rem;
+			margin-bottom: 2rem;
+		}
+	}
+
+	/* Features Grid */
+	.features {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.feature-card {
+		background: rgba(15, 12, 41, 0.6);
+		padding: 1.5rem;
+		border-radius: 15px;
+		border: 1px solid rgba(108, 99, 255, 0.3);
+		transition: all 0.3s ease;
+	}
+
+	.feature-card:hover {
+		transform: translateY(-5px);
+		border-color: #6c63ff;
+		box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+	}
+
+	.feature-icon {
+		font-size: 2rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.feature-card h3 {
+		font-size: 1.3rem;
+		margin-bottom: 0.75rem;
+		color: #667eea;
+	}
+
+	.feature-card p {
+		color: #b0b0b0;
+		line-height: 1.6;
+		font-size: 0.95rem;
+	}
+
+	/* Tablet */
+	@media (min-width: 768px) {
+		.features {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2rem;
+			margin-bottom: 3rem;
+		}
+
+		.feature-card {
+			padding: 2rem;
+		}
+
+		.feature-icon {
+			font-size: 2.5rem;
+			margin-bottom: 1rem;
+		}
+
+		.feature-card h3 {
+			font-size: 1.5rem;
+			margin-bottom: 0.8rem;
+		}
+
+		.feature-card p {
+			font-size: 1rem;
+		}
+	}
+
+	/* Desktop */
+	@media (min-width: 1024px) {
+		.features {
+			grid-template-columns: repeat(3, 1fr);
+			margin-bottom: 4rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.nav-links {
+			gap: 1rem;
+		}
+
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.hero p {
+			font-size: 1.1rem;
+		}
+
+		.features {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
