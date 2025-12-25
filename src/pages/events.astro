@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const CALENDAR_ID = '141c871f248f963c32f2a16fa07f3f9b7547a6af855219879ca68175c47925c9@group.calendar.google.com';
-const API_KEY = 'AIzaSyDaJmNe4Gcfc4PTn-8VOZn1vtwb33FUlj0';
 ---
 <Layout title="PlayGames - Spartanburg's Premier Card & Game Shop">
     <div    class="min-h-screen text-gray-200"
@@ -64,7 +62,7 @@ const API_KEY = 'AIzaSyDaJmNe4Gcfc4PTn-8VOZn1vtwb33FUlj0';
     const closeModalBtn = document.getElementById('close-modal');
 
     const CALENDAR_ID = "141c871f248f963c32f2a16fa07f3f9b7547a6af855219879ca68175c47925c9@group.calendar.google.com\n";
-    const API_KEY = "{{API_KEY}}";
+    const API_KEY = "AIzaSyDaJmNe4Gcfc4PTn-8VOZn1vtwb33FUlj0";
 
     function formatDate(dateStr) {
         return new Date(dateStr).toLocaleDateString('en-US', {
