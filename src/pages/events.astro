@@ -1,18 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const CALENDAR_ID = 'YOUR_CALENDAR_ID@group.calendar.google.com';
-const API_KEY = 'YOUR_API_KEY';
+const CALENDAR_ID = '141c871f248f963c32f2a16fa07f3f9b7547a6af855219879ca68175c47925c9@group.calendar.google.com';
+const API_KEY = 'AIzaSyDaJmNe4Gcfc4PTn-8VOZn1vtwb33FUlj0';
 ---
 <Layout title="PlayGames - Spartanburg's Premier Card & Game Shop">
-    <div
-            class="min-h-screen text-gray-200"
-            style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);"
-    >
+    <div    class="min-h-screen text-gray-200"
+            style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);">
         <div class="max-w-7xl mx-auto px-4 py-12">
             <!-- Header -->
             <header class="text-center mb-12">
-                <h1
-                        class="text-4xl font-bold mb-4"
+                <h1     class="text-4xl font-bold mb-4"
                         style="background: linear-gradient(135deg, #667eea, #764ba2);
                    -webkit-background-clip: text;
                    -webkit-text-fill-color: transparent;">
@@ -35,27 +32,20 @@ const API_KEY = 'YOUR_API_KEY';
             </div>
     
             <!-- Events Grid -->
-            <div
-                    id="events-grid"
-                    class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            ></div>
+            <div    id="events-grid"
+                    class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">                
+            </div>
         </div>
     
         <!-- Modal -->
-        <div
-                id="modal"
-                class="fixed inset-0 hidden items-center justify-center bg-black/80 p-4 z-50"
-        >
-            <div
-                    id="modal-content"
+        <div    id="modal"
+                class="fixed inset-0 hidden items-center justify-center bg-black/80 p-4 z-50">
+            <div    id="modal-content"
                     class="max-w-2xl w-full rounded-xl p-6 relative"
                     style="background: linear-gradient(135deg, #0f0c29, #302b63);
-                 border: 2px solid #6c63ff;"
-            >
-                <button
-                        id="close-modal"
-                        class="absolute top-4 right-4 text-xl"
-                >
+                 border: 2px solid #6c63ff;">
+                <button id="close-modal"
+                        class="absolute top-4 right-4 text-xl">
                     ✕
                 </button>
     
@@ -73,7 +63,7 @@ const API_KEY = 'YOUR_API_KEY';
     const modalBody = document.getElementById('modal-body');
     const closeModalBtn = document.getElementById('close-modal');
 
-    const CALENDAR_ID = "{{CALENDAR_ID}}";
+    const CALENDAR_ID = "141c871f248f963c32f2a16fa07f3f9b7547a6af855219879ca68175c47925c9@group.calendar.google.com\n";
     const API_KEY = "{{API_KEY}}";
 
     function formatDate(dateStr) {
