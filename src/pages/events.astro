@@ -299,22 +299,16 @@ import '../styles/events.css';
           ` : ''}
         `;
         
-        // modalEl.classList.remove('hidden');
-        // modalEl.classList.add('flex');
         modalEl.classList.add('is-open');
     }
 
     // Close Modal
     closeModalBtn.addEventListener('click', () => {
-        // modalEl.classList.add('hidden');
-        // modalEl.classList.remove('flex');
         modalEl.classList.remove('is-open');
     });
 
     modalEl.addEventListener('click', (e) => {
         if (e.target === modalEl) {
-            //modalEl.classList.add('hidden');
-            //modalEl.classList.remove('flex');
             modalEl.classList.remove('is-open');
         }
     });

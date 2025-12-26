@@ -241,7 +241,12 @@
     margin-top: auto;
 }
 
-
+.event-action-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    color: #6c63ff;
+}
 
 .event-badge {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
