@@ -3,42 +3,42 @@ import Layout from "../layouts/Layout.astro";
 import '../styles/events.css';
 ---
 <Layout title="PlayGames - Events | Spartanburg's Premier Card & Game Shop">
-    <div id="eventsMain" class="min-h-screen text-gray-200 page-background">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div id="eventsMain" class="events-page page-background">
+        <div class="events-container">
+
             <!-- Header -->
-            <header class="text-center mb-8 sm:mb-12">
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 gradient-text">
+            <header class="events-header">
+                <h1 class="events-title gradient-text">
                     Upcoming Events
                 </h1>
-                <p class="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto px-4">
+                <p class="events-subtitle">
                     Join us for tournaments, casual play, and community events. All skill levels welcome!
                 </p>
             </header>
 
             <!-- Loading State -->
-            <div id="loading" class="text-center py-12">
-                <div class="inline-block animate-spin h-12 w-12 border-b-2 border-purple-500 rounded-full"></div>
-                <p class="mt-4 text-gray-400">Loading events...</p>
+            <div id="loading" class="events-loading">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Loading events...</p>
             </div>
 
             <!-- Error State -->
-            <div id="error" class="hidden text-center py-12">
-                <p class="text-red-400 mb-4">Unable to load events from calendar</p>
-                <p class="text-gray-400 text-sm">Showing example events below</p>
+            <div id="error" class="events-error hidden">
+                <p class="error-message">Unable to load events from calendar</p>
+                <p class="error-subtext">Showing example events below</p>
             </div>
 
             <!-- Events Grid -->
-            <div id="events-grid"
-                 class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            </div>
+            <div id="events-grid" class="events-grid hidden"></div>
 
             <!-- No Events -->
-            <div id="no-events" class="hidden text-center py-12">
-                <svg class="w-16 h-16 mx-auto mb-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            <div id="no-events" class="events-empty hidden">
+                <svg class="events-empty-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
-                <p class="text-xl text-gray-400">No upcoming events scheduled</p>
-                <p class="text-gray-500 mt-2">Check back soon for new events!</p>
+                <p class="events-empty-title">No upcoming events scheduled</p>
+                <p class="events-empty-subtitle">Check back soon for new events!</p>
             </div>
         </div>
 
