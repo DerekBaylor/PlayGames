@@ -43,19 +43,20 @@ import '../styles/events.css';
         </div>
 
         <!-- Modal -->
-        <div id="modal"
-             class="fixed inset-0 hidden items-center justify-center modal-overlay p-4 z-50">
-            <div id="modal-content"
-                 class="max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-xl p-6 sm:p-8 relative modal-content">
-                <button id="close-modal"
-                        class="absolute top-4 right-4 p-2 rounded-full transition-colors hover:bg-gray-700"
-                        aria-label="Close modal">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        <div id="event-modal" class="modal-overlay">
+            <div id="modal-content" class="modal-content">
+                <button
+                    id="close-modal"
+                    class="modal-close-btn"
+                    aria-label="Close modal"
+                >
+                    <svg class="modal-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
 
-                <div id="modal-body" class="pr-8"></div>
+                <div id="modal-body" class="modal-body"></div>
             </div>
         </div>
     </div>
@@ -66,7 +67,7 @@ import '../styles/events.css';
     const errorEl = document.getElementById('error');
     const gridEl = document.getElementById('events-grid');
     const noEventsEl = document.getElementById('no-events');
-    const modalEl = document.getElementById('modal');
+    const modalEl = document.getElementById('event-modal');
     const modalBody = document.getElementById('modal-body');
     const closeModalBtn = document.getElementById('close-modal');
 
@@ -215,114 +216,106 @@ import '../styles/events.css';
         const daysBadge = daysUntil(event.start.dateTime);
 
         modalBody.innerHTML = `
-            ${daysBadge ? `
-                <div class="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-4"
-                     style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                    ${daysBadge}
-                </div>
-            ` : ''}
-
-            <h2 class="text-2xl sm:text-3xl font-bold mb-6" style="color: #667eea;">
-                ${event.summary}
-            </h2>
-
-            <div class="space-y-4 mb-6">
-                <div class="flex items-start gap-3 text-gray-300">
-                    <svg class="w-6 h-6 mt-0.5 flex-shrink-0" style="color: #6c63ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                    <div>
-                        <p class="font-semibold">Date</p>
-                        <p>${formatDate(event.start.dateTime)}</p>
-                    </div>
-                </div>
-
-                <div class="flex items-start gap-3 text-gray-300">
-                    <svg class="w-6 h-6 mt-0.5 flex-shrink-0" style="color: #6c63ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <div>
-                        <p class="font-semibold">Time</p>
-                        <p>${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)}</p>
-                    </div>
-                </div>
-
-                ${event.location ? `
-                    <div class="flex items-start gap-3 text-gray-300">
-                        <svg class="w-6 h-6 mt-0.5 flex-shrink-0" style="color: #6c63ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                        <div>
-                            <p class="font-semibold">Location</p>
-                            <p>${event.location}</p>
-                        </div>
-                    </div>
-                ` : ''}
-
-                ${event.attendees ? `
-                    <div class="flex items-start gap-3 text-gray-300">
-                        <svg class="w-6 h-6 mt-0.5 flex-shrink-0" style="color: #6c63ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
-                        <div>
-                            <p class="font-semibold">Expected Attendance</p>
-                            <p>${event.attendees}</p>
-                        </div>
-                    </div>
-                ` : ''}
+          ${daysBadge ? `
+            <div class="days-modal-badge">
+              ${daysBadge}
             </div>
-
-            ${event.description ? `
-                <div class="mb-6">
-                    <h3 class="text-lg font-semibold mb-2" style="color: #667eea;">
-                        Event Details
-                    </h3>
-                    <p class="text-gray-300 leading-relaxed whitespace-pre-wrap">
-                        ${event.description}
-                    </p>
-                </div>
-            ` : ''}
-
-            <div class="flex flex-col sm:flex-row gap-3">                
-                ${event.htmlLink ? `
-                    <a href="${event.htmlLink}" target="_blank" rel="noopener noreferrer"
-                       class="flex-1 px-6 py-3 rounded-full font-semibold transition-all flex items-center justify-center gap-2"
-                       style="border: 2px solid #667eea; color: #667eea;">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                        View in Calendar
-                    </a>
-                ` : ''}
+          ` : ''}
+        
+          <h2 class="event-modal-title">
+            ${event.summary}
+          </h2>
+        
+          <div class="event-info-container">
+            <div class="event-info-row">
+              <svg class="event-info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <div>
+                <p class="event-info-label">Date</p>
+                <p>${formatDate(event.start.dateTime)}</p>
+              </div>
             </div>
+        
+            <div class="event-info-row">
+              <svg class="event-info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <p class="event-info-label">Time</p>
+                <p>${formatTime(event.start.dateTime)} – ${formatTime(event.end.dateTime)}</p>
+              </div>
+            </div>
+        
+            ${event.location ? `
+              <div class="event-info-row">
+                <svg class="event-info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div>
+                  <p class="event-info-label">Location</p>
+                  <p>${event.location}</p>
+                </div>
+              </div>
+            ` : ''}
+        
+            ${event.attendees ? `
+              <div class="event-info-row">
+                <svg class="event-info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1z" />
+                </svg>
+                <div>
+                  <p class="event-info-label">Expected Attendance</p>
+                  <p>${event.attendees}</p>
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        
+          ${event.description ? `
+            <div class="event-details">
+              <h3 class="event-details-title">Event Details</h3>
+              <p class="event-details-text">${event.description}</p>
+            </div>
+          ` : ''}
+        
+          ${event.htmlLink ? `
+            <a href="${event.htmlLink}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="event-action-btn">
+              <svg class="event-action-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6v6L10 14" />
+              </svg>
+              View in Calendar
+            </a>
+          ` : ''}
         `;
-
-        // Add hover effect to register button
-        const registerBtn = modalBody.querySelector('.register-btn');
-        if (registerBtn) {
-            registerBtn.addEventListener('mouseenter', () => {
-                registerBtn.style.boxShadow = '0 6px 25px rgba(108, 99, 255, 0.6)';
-            });
-            registerBtn.addEventListener('mouseleave', () => {
-                registerBtn.style.boxShadow = '0 4px 15px rgba(108, 99, 255, 0.4)';
-            });
-        }
-
-        modalEl.classList.remove('hidden');
-        modalEl.classList.add('flex');
+        
+        // modalEl.classList.remove('hidden');
+        // modalEl.classList.add('flex');
+        modalEl.classList.add('is-open');
     }
 
     // Close Modal
     closeModalBtn.addEventListener('click', () => {
-        modalEl.classList.add('hidden');
-        modalEl.classList.remove('flex');
+        // modalEl.classList.add('hidden');
+        // modalEl.classList.remove('flex');
+        modalEl.classList.remove('is-open');
     });
 
     modalEl.addEventListener('click', (e) => {
         if (e.target === modalEl) {
-            modalEl.classList.add('hidden');
-            modalEl.classList.remove('flex');
+            //modalEl.classList.add('hidden');
+            //modalEl.classList.remove('flex');
+            modalEl.classList.remove('is-open');
         }
     });
 
