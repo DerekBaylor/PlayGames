@@ -122,79 +122,88 @@ import '../styles/events.css';
 
         events.forEach(event => {
             const card = document.createElement('div');
-            card.className = 'cursor-pointer rounded-xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-2';
-            card.style.background = 'rgba(15, 12, 41, 0.6)';
-            card.style.border = '1px solid rgba(108, 99, 255, 0.3)';
-            card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            card.className = 'event-card';
 
             const daysBadge = daysUntil(event.start.dateTime);
 
             card.innerHTML = `
                 ${daysBadge ? `
-                    <div class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3"
-                         style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <div class="days-badge">
                         ${daysBadge}
                     </div>
                 ` : ''}
                 
-                <h3 class="text-xl sm:text-2xl font-bold mb-3" style="color: #667eea;">
+                <h3 class="event-summary">
                     ${event.summary}
                 </h3>
                 
-                <div class="space-y-2 text-sm sm:text-base">
-                    <div class="flex items-start gap-2 text-gray-300">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0" style="color: #6c63ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        <span>${formatDate(event.start.dateTime)}</span>
+                <div class="event-info">
+                    <div class="event-info-row">
+                      <svg
+                        class="event-info-row__icon event-info-row__icon--date"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        ></path>
+                      </svg>
+                      <span>${formatDate(event.start.dateTime)}</span>
                     </div>
+
                     
-                    <div class="flex items-start gap-2 text-gray-300">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0" style="color: #6c63ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                 <div class="event-info-row">
+                        <svg 
+                            class="event-info-row__icon event-info-row__icon--date" 
+                            fill="none" 
+                            stroke="currentColor"
+                             viewBox="0 0 24 24">
+                            <path 
+                                stroke-linecap="round" 
+                                stroke-linejoin="round" 
+                                stroke-width="2" 
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
                         </svg>
                         <span>${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)}</span>
                     </div>
                     
                     ${event.location ? `
-                        <div class="flex items-start gap-2 text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0" style="color: #6c63ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                 <div class="event-info-row">
+                            <svg 
+                                class="event-info-row__icon event-info-row__icon--date" 
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                                >
+                                <path 
+                                    stroke-linecap="round" 
+                                    stroke-linejoin="round" 
+                                    stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                ></path>
+                                <path 
+                                    stroke-linecap="round" 
+                                    stroke-linejoin="round" 
+                                    stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                ></path>
                             </svg>
                             <span>${event.location}</span>
                         </div>
                     ` : ''}
-                    
-                    ${event.attendees ? `
-                        <div class="flex items-start gap-2 text-gray-300">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0" style="color: #6c63ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
-                            <span>${event.attendees}</span>
-                        </div>
-                    ` : ''}
                 </div>
                 
-                <p class="mt-4 text-gray-400 text-sm line-clamp-2">
-                    ${event.description || 'Click for more details'}
+                <p class="description">
+                  ${event.description || 'Click for more details'}
                 </p>
                 
-                <button class="mt-4 text-sm font-semibold hover:underline" style="color: #667eea;">
-                    View Details →
+                <button class="details-btn">
+                  View Details →
                 </button>
             `;
-
-            // Hover effects
-            card.addEventListener('mouseenter', () => {
-                card.style.borderColor = '#6c63ff';
-                card.style.boxShadow = '0 10px 30px rgba(108, 99, 255, 0.3)';
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.borderColor = 'rgba(108, 99, 255, 0.3)';
-                card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-            });
 
             card.addEventListener('click', () => openModal(event));
             gridEl.appendChild(card);
@@ -275,14 +284,7 @@ import '../styles/events.css';
                 </div>
             ` : ''}
 
-            <div class="flex flex-col sm:flex-row gap-3">
-                <button class="flex-1 px-6 py-3 rounded-full font-semibold transition-all hover:-translate-y-1 register-btn"
-                        style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                               color: white;
-                               box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);">
-                    Register for Event
-                </button>
-                
+            <div class="flex flex-col sm:flex-row gap-3">                
                 ${event.htmlLink ? `
                     <a href="${event.htmlLink}" target="_blank" rel="noopener noreferrer"
                        class="flex-1 px-6 py-3 rounded-full font-semibold transition-all flex items-center justify-center gap-2"
