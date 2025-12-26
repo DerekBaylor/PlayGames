@@ -288,8 +288,6 @@
     text-decoration: underline;
 }
 
-
-
 /* Event Modal */
 .modal-overlay {
     padding: 1rem;
@@ -323,7 +321,6 @@
     box-shadow: 0 20px 60px rgba(108, 99, 255, 0.4);
     -webkit-overflow-scrolling: touch;
 }
-
 
 @media (min-width: 640px) {
     .modal-content {
@@ -468,7 +465,6 @@
     outline: 2px solid #8b85ff;
     outline-offset: 2px;
 }
-
 
 .event-badge {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
