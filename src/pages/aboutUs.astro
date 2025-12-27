@@ -1,7 +1,166 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles/aboutUs.css";
 ---
 
 <Layout title="PlayGames - About Us | Spartanburg's Premier Card & Game Shop">
-    About Us - Coming Soon!
+    <div class="about-page">
+        <div class="container">
+            <!-- Header -->
+            <header class="page-header">
+                <h1 class="page-title">About PlayGames</h1>
+                <p class="page-subtitle">
+                    Your local hub for trading card games, board games, and community since 2025
+                </p>
+            </header>
+
+            <!-- About Article -->
+            <article class="about-article">
+                <div class="article-image">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="article-content">
+                    <h2 class="article-title">Our Story</h2>
+                    <p>
+                        PlayGames was founded in 2025 with a simple mission: to create a welcoming space where
+                        gamers of all ages and skill levels could come together to share their passion for
+                        trading card games, board games, and tabletop experiences.
+                    </p>
+                    <p>
+                        Located in the heart of Spartanburg, SC, we've grown from a small card shop into a
+                        thriving community hub. Our store offers an extensive selection of products from Magic:
+                        The Gathering, Pokémon, Yu-Gi-Oh!, and many other popular trading card games, alongside
+                        a carefully curated collection of board games and tabletop RPGs.
+                    </p>
+                    <p>
+                        What sets us apart is our commitment to fostering a positive and inclusive gaming
+                        environment. We host weekly tournaments, casual play sessions, and special events that
+                        bring our community together. Whether you're a competitive player looking to test your
+                        skills or a newcomer just starting your gaming journey, you'll find a home at PlayGames.
+                    </p>
+
+                    <h2 class="article-title">Our Mission</h2>
+                    <p>
+                        At PlayGames, we believe that gaming brings people together. Our mission is to provide:
+                    </p>
+                    <ul class="mission-list">
+                        <li>A welcoming and safe space for all gamers</li>
+                        <li>High-quality products at competitive prices</li>
+                        <li>Regular events and tournaments for all skill levels</li>
+                        <li>Expert advice and support for building your perfect deck or finding your next game</li>
+                        <li>A strong sense of community where friendships are formed</li>
+                    </ul>
+
+                    <p>
+                        We're more than just a game store—we're a gathering place, a learning center, and a
+                        second home for gamers across Spartanburg and beyond. Stop by and experience the
+                        PlayGames difference for yourself!
+                    </p>
+                </div>
+            </article>
+
+            <!-- Team Section -->
+            <section class="team-section">
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle">
+                    Our passionate staff is here to help you find the perfect cards and games
+                </p>
+
+                <div class="team-grid">
+                    <!-- Employee Card 1 -->
+                    <div class="employee-card">
+                        <div class="employee-image">
+                            <div class="image-placeholder-small">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="employee-info">
+                            <h3 class="employee-name">Alex Johnson</h3>
+                            <p class="employee-role">Store Owner & Manager</p>
+                            <p class="employee-bio">
+                                Magic: The Gathering enthusiast with 15+ years of experience. Loves helping
+                                players build competitive decks and discovering hidden gems in new sets.
+                            </p>
+                            <p class="employee-specialty">
+                                <span class="specialty-label">Specialty:</span> MTG Commander & Modern
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Employee Card 2 -->
+                    <div class="employee-card">
+                        <div class="employee-image">
+                            <div class="image-placeholder-small">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="employee-info">
+                            <h3 class="employee-name">Maria Rodriguez</h3>
+                            <p class="employee-role">Assistant Manager</p>
+                            <p class="employee-bio">
+                                Pokémon TCG expert and tournament organizer. Has been collecting since the
+                                Base Set and knows everything about card values and rarity.
+                            </p>
+                            <p class="employee-specialty">
+                                <span class="specialty-label">Specialty:</span> Pokémon TCG & Card Grading
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Employee Card 3 -->
+                    <div class="employee-card">
+                        <div class="employee-image">
+                            <div class="image-placeholder-small">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="employee-info">
+                            <h3 class="employee-name">Jake Miller</h3>
+                            <p class="employee-role">Events Coordinator</p>
+                            <p class="employee-bio">
+                                Board game aficionado and Yu-Gi-Oh! judge. Runs our weekly tournaments and
+                                teaches new players the ropes with patience and enthusiasm.
+                            </p>
+                            <p class="employee-specialty">
+                                <span class="specialty-label">Specialty:</span> Yu-Gi-Oh! & Board Games
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Employee Card 4 -->
+                    <div class="employee-card">
+                        <div class="employee-image">
+                            <div class="image-placeholder-small">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="employee-info">
+                            <h3 class="employee-name">Sarah Chen</h3>
+                            <p class="employee-role">Sales Associate</p>
+                            <p class="employee-bio">
+                                TCG collector and competitive player. Specializes in helping customers find
+                                the perfect cards for their collection or deck builds.
+                            </p>
+                            <p class="employee-specialty">
+                                <span class="specialty-label">Specialty:</span> Multiple TCGs & Sealed Product
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 </Layout>

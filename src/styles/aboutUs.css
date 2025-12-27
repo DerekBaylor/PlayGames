@@ -1,0 +1,323 @@
+/* About Us Page Styles - Mobile First */
+
+.about-page {
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    min-height: 100vh;
+    color: #e0e0e0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+/* About Article */
+.about-article {
+    background: rgba(15, 12, 41, 0.6);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(108, 99, 255, 0.3);
+}
+
+.article-image {
+    margin-bottom: 2rem;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(108, 99, 255, 0.3);
+}
+
+.image-placeholder svg {
+    width: 80px;
+    height: 80px;
+    color: #667eea;
+}
+
+.article-content {
+    line-height: 1.7;
+}
+
+.article-title {
+    font-size: 1.5rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.article-title:first-child {
+    margin-top: 0;
+}
+
+.article-content p {
+    margin-bottom: 1rem;
+    color: #d1d5db;
+}
+
+.mission-list {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #d1d5db;
+}
+
+.mission-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+/* Team Section */
+.team-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Employee Cards */
+.employee-card {
+    background: rgba(15, 12, 41, 0.6);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(108, 99, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.employee-card:hover {
+    transform: translateY(-5px);
+    border-color: #6c63ff;
+    box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+}
+
+.employee-image {
+    margin-bottom: 1rem;
+}
+
+.image-placeholder-small {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 2px solid rgba(108, 99, 255, 0.4);
+}
+
+.image-placeholder-small svg {
+    width: 50px;
+    height: 50px;
+    color: #667eea;
+}
+
+.employee-info {
+    text-align: center;
+}
+
+.employee-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 0.25rem;
+}
+
+.employee-role {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.employee-bio {
+    font-size: 0.875rem;
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.employee-specialty {
+    font-size: 0.875rem;
+    color: #b0b0b0;
+}
+
+.specialty-label {
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .container {
+        padding: 3rem 2rem;
+    }
+
+    .page-header {
+        margin-bottom: 4rem;
+    }
+
+    .page-title {
+        font-size: 3rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .about-article {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .article-image {
+        margin-bottom: 0;
+        position: sticky;
+        top: 7rem;
+    }
+
+    .image-placeholder {
+        height: 250px;
+    }
+
+    .image-placeholder svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .article-title {
+        font-size: 1.75rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .employee-card {
+        padding: 2rem;
+    }
+
+    .image-placeholder-small {
+        width: 120px;
+        height: 120px;
+    }
+
+    .image-placeholder-small svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .employee-name {
+        font-size: 1.5rem;
+    }
+
+    .employee-role {
+        font-size: 1rem;
+    }
+
+    .employee-bio {
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.125rem;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .page-title {
+        font-size: 3.5rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .about-article {
+        padding: 2.5rem;
+    }
+
+    .image-placeholder {
+        height: 300px;
+    }
+
+    .article-title {
+        font-size: 2rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1280px) {
+    .about-article {
+        grid-template-columns: 1fr 3fr;
+    }
+}
