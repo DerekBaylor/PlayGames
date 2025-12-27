@@ -18,7 +18,12 @@
             <p>📍 Spartanburg, SC</p>
             <p>📧 info@playgames.com</p>
             <p>📞 (555) 555-GAME</p>
-            <p>🕐 Mon-Sat: 11AM-10PM<br>Sun: 12PM-8PM</p>
+            <p class="hours">
+                <span class="hours-icon">🕐</span>
+                <span class="time-info">Mon–Wed: 11AM–10PM</span>
+                <span class="time-info">Thu–Fri: 11AM–11PM</span>
+                <span class="time-info">Sun: 12PM–8PM</span>
+            </p>
         </div>
 
         <div class="footer-section">
@@ -67,6 +72,27 @@
         transition: color 0.3s ease;
         font-size: 0.95rem;
     }
+
+    .hours {
+        display: grid !important;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.5rem;
+        row-gap: 0.25rem;
+        align-items: start;
+    }
+
+    .hours-icon {
+        grid-column: 1;
+        grid-row: 1;
+        line-height: 1.6;
+    }
+
+    .time-info {
+        grid-column: 2;
+        display: block;
+        line-height: 1.6;
+    }
+
 
     .footer-section a:hover {
         color: #6c63ff;
