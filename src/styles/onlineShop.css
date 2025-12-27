@@ -104,8 +104,11 @@
 }
 
 .search-bar {
-    position: relative;
     margin-bottom: 1rem;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* prevents bleed */
 }
 
 .search-icon {
