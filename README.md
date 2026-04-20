@@ -1,6 +1,6 @@
 # Play Games ⚔️
 
-A sample bakery website built with the [Astro](https://astro.build/) framework, vanilla JavaScript, HTML, and CSS. Deployed on Netlify.
+A sample game store website built with the [Astro](https://astro.build/) framework, vanilla JavaScript, HTML, and CSS. Deployed on Netlify.
 
 ![PLay Games' Homepage](./PlayGamesHomePage.png)
 
